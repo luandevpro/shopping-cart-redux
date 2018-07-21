@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Header from './components/Header';
-import Products from './components/Products';
-import Message from './components/Message';
-import Cart from './components/Cart';
-import Footer from './components/Footer';
+import React, {Component} from 'react'
+import Header from './components/Header'
+import CartsContainer from './containers/CartsContainer'
+import Footer from './components/Footer'
+import ProductsContainer from './containers/ProductsContainer';
+import MessagesContainer from './containers/MessagesContainer';
 
 class App extends Component {
   render() {
@@ -12,13 +12,13 @@ class App extends Component {
         <Header/>
         <main id="mainContainer">
           <div className="container">
-              <Products/>
-              <Message/>
-              <Cart/>
+            <ProductsContainer/>
+            <MessagesContainer/>
+            <CartsContainer/>
           </div>
         </main>
         <Footer/>
-    </div>
+      </div>
     );
   }
 }

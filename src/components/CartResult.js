@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 
 export default class CartResult extends Component {
+  showTotalCart(cart){
+     let total = cart.reduce((total,num) => {
+        return total += num.product.price*num.quantity
+     },0)
+     return total
+  } 
   render() {
+    var { cart } = this.props 
     return (
       <tr>
          <td colSpan="3"></td>
@@ -12,7 +19,7 @@ export default class CartResult extends Component {
          </td>
          <td>
             <h4>
-               <strong>15$</strong>
+               <strong>{ this.showTotalCart(cart) }$</strong>
             </h4>
          </td>
          <td colSpan="3">
